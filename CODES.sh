@@ -237,6 +237,11 @@ installDistroDependencies ()
         \curl -sSL https://get.rvm.io | bash -s stable
         source /home/vagrant/.rvm/scripts/rvm
         rvm install ruby
+	sudo npm install npm -g
+	sudo npm install npm -g n
+  	curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+   	sudo apt-get install -y nodejs
+	sudo npm install -g node-gyp
     elif runningArch; then
         sudo pacman -S --needed --noconfirm lsb-release
         sudo pacman -S --needed --noconfirm curl
@@ -1000,11 +1005,13 @@ installGems ()
         # Patch required for building the thrift gem on OS X
         bundle config build.thrift "--with-cppflags=-D_FORTIFY_SOURCE=0"
     fi
-    bundle config build.nokogiri --use-system-libraries
+
     if [ -n "$BUNDLE_VER" ]; then
-        bundle _${BUNDLE_VER}_ install --without mysql
+       #bundle config build.nokogiri --use-system-libraries --without mysql
+       bundle _${BUNDLE_VER}_ install --without mysql
     else
-        bundle install --without mysql
+       #bundle config build.nokogiri --use-system-libraries --without mysql 
+       bundle install --without mysql
     fi
 
     retval="$?"
