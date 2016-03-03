@@ -233,6 +233,10 @@ installDistroDependencies ()
         sudo apt-get -y install ruby-pg
         sudo apt-get -y install build-essential
         sudo apt-get -y install libglib2.0
+        curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+        \curl -sSL https://get.rvm.io | bash -s stable
+        source /home/vagrant/.rvm/scripts/rvm
+        rvm install ruby
     elif runningArch; then
         sudo pacman -S --needed --noconfirm lsb-release
         sudo pacman -S --needed --noconfirm curl
