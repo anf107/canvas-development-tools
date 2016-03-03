@@ -1000,7 +1000,7 @@ installGems ()
         # Patch required for building the thrift gem on OS X
         bundle config build.thrift "--with-cppflags=-D_FORTIFY_SOURCE=0"
     fi
-
+    bundle config build.nokogiri --use-system-libraries
     if [ -n "$BUNDLE_VER" ]; then
         bundle _${BUNDLE_VER}_ install --without mysql
     else
