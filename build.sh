@@ -12,7 +12,7 @@ sudo add-apt-repository ppa:brightbox/ruby-ng
 sudo apt-get update
 sudo apt-get install ruby2.1 ruby2.1-dev
 
-curl -O https://raw.githubusercontent.com/FreedomBen/canvas-development-tools/master/CODES.sh
+curl -O https://raw.githubusercontent.com/anf107/canvas-development-tools/master/CODES.sh
 chmod +x CODES.sh
 ./CODES.sh --full
 
