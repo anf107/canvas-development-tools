@@ -236,7 +236,7 @@ installDistroDependencies ()
         curl -sSL https://rvm.io/mpapis.asc | gpg --import -
         \curl -sSL https://get.rvm.io | bash -s stable
         source /home/vagrant/.rvm/scripts/rvm
-        rvm install ruby
+        # this is installing a new incompatable ruby version rvm install ruby
 	sudo npm install npm -g
 	sudo npm install npm -g n
   	curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
